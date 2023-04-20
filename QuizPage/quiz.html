@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Personality Quiz</title>
+    <link rel="stylesheet" href="quiz.css" />
+  </head>
+  <body>
+    <div class="quiz-container">
+      <h1 class="quiz-title">Personality Quiz</h1>
+      <form class="quiz-form" id="quiz-form">
+        <div class="quiz-question">
+          <h2 class="quiz-question-text"></h2>
+          <div class="quiz-options"></div>
+        </div>
+        <button class="quiz-submit" type="submit">Submit</button>
+        <div class="error-message" id="error-message"></div>
+      </form>
+    </div>
+    <div class="result-container">
+      <h1 class="result-title">Results</h1>
+      <div class="result-items"></div>
+    </div>
+
+    <script defer src="quiz.js"></script>
+  </body>
+</html>
