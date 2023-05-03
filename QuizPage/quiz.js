@@ -67,24 +67,39 @@ const myQuestions = [
   },
 ];
 
+// Create an object to store the total count for each trait
+const traitCounts = {
+  "Ambitious": 0,
+  "Team player": 0,
+  "Self-motivated": 0,
+  "Analytical": 0,
+  "Creative": 0,
+  "Practical": 0,
+  "Resilient": 0,
+  "Collaborative": 0,
+  "Innovative": 0,
+  "Altruistic": 0,
+  "Curious": 0,
+  "Organized": 0,
+  "Adaptable": 0,
+  "Efficient": 0
+};
+
 document.addEventListener("DOMContentLoaded", function () {
   const quizContainer = document.getElementById("quiz-form");
-  const resultsContainer = document.getElementById("result-container");
+  const resultsContainer = document.querySelector(".result-items");
   const submitButton = document.querySelector('.quiz-submit');
+  const backhomeButton = document.querySelector('.back-to-home');
 
   function buildQuiz() {
     const output = [];
   
-    // Loop through each question
     myQuestions.forEach((currentQuestion, questionNumber) => {
-      // Create an array to store each answer choice
       const answers = [];
   
-      // Loop through each answer choice for the current question
       for (const letter in currentQuestion.answers) {
-        // Add HTML for the answer choice to the array
         answers.push(`
-          <div class="answer-container">
+          <div class="quiz-option">
             <input
               type="radio"
               id="question${questionNumber}${letter}"
@@ -97,77 +112,42 @@ document.addEventListener("DOMContentLoaded", function () {
         `);
       }
   
-      // Add HTML for the question and its answer choices to the output array
       output.push(`
         <div class="question-container">
-          <h2 class="question">${currentQuestion.question}</h2>
-          <div class="answers">${answers.join("")}</div>
+          <h2 class="quiz-question">${currentQuestion.question}</h2>
+          <div class="quiz-options">${answers.join("")}</div>
           </br>
-          <button class="quiz-submit" type="submit">Submit</button>
         </div>
       `);
     });
   
-    // Combine all the HTML for the questions into a single string and add it to the page
     quizContainer.innerHTML = output.join("");
-    submitButton.addEventListener("click", showResults);
   }
-  
-
 
 function showResults() {
-  const answerContainers = quizContainer.querySelectorAll(".answers");
-
-  let personalityTraits = {};
-
+  const answerContainers = quizContainer.querySelectorAll(".quiz-options");
+  // Loop through each question and update the selectedTraits array
+  const selectedTraits = [];
   myQuestions.forEach((currentQuestion, questionNumber) => {
     const answerContainer = answerContainers[questionNumber];
     const selector = `input[name=question${questionNumber}]:checked`;
     const userAnswer = (answerContainer.querySelector(selector) || {}).value;
-
-    if (userAnswer) {
-      if (personalityTraits.hasOwnProperty(currentQuestion.traits)) {
-        personalityTraits[currentQuestion.traits][userAnswer]++;
-      } else {
-        personalityTraits[currentQuestion.traits] = { a: 0, b: 0, c: 0 };
-        personalityTraits[currentQuestion.traits][userAnswer]++;
-      }
-    }
-    
+    selectedTraits.push(currentQuestion.traits[userAnswer]);
   });
 
-  const traitsOutput = [];
+  // Remove duplicates from selectedTraits array
+  const uniqueTraits = [...new Set(selectedTraits)];
 
-  for (trait in personalityTraits) {
-    const total = Object.values(personalityTraits[trait]).reduce(
-      (a, b) => a + b
-    );
-    const aPercentage = ((personalityTraits[trait]["a"] / total) * 100).toFixed(
-      2
-    );
-    const bPercentage = ((personalityTraits[trait]["b"] / total) * 100).toFixed(
-      2
-    );
-    const cPercentage = ((personalityTraits[trait]["c"] / total) * 100).toFixed(
-      2
-    );
-
-    traitsOutput.push(
-      `<div class="trait">
-             <h4>${trait}</h4>
-             <div class="percentage-bar">
-                 <div class="a" style="width: ${aPercentage}%"></div>
-                 <div class="b" style="width: ${bPercentage}%"></div>
-                 <div class="c" style="width: ${cPercentage}%"></div>
-             </div>
-             <div class="percentage">${aPercentage}% A | ${bPercentage}% B | ${cPercentage}% C</div>
-         </div>`
-    );
-  }
-
-  quizContainer.innerHTML = traitsOutput.join("");
+  // Display selected traits in results container
+  const traitsOutput = uniqueTraits.map(trait => `<div class="trait"><h4>${trait}</h4></div>`);
+  resultsContainer.innerHTML = traitsOutput.join("");
 }
 
 buildQuiz();
-
+  submitButton.addEventListener("click", function (event) {
+    showResults();
+  });
+  backhomeButton.addEventListener("click", function (event) {
+    traits;
+  });
 });
