@@ -128,6 +128,86 @@ form button[type="submit"] {
   color: #fff;
 }
 
+.tag-collaborative {
+  background-color: #5f8603;
+  color: #fff;
+}
+
+.tag-organized {
+  background-color: #8120b9;
+  color: #fff;
+}
+
+.tag-efficent {
+  background-color: #bf67f1;
+  color: #fff;
+}
+
+.tag-curious {
+  background-color: #da920e;
+  color: #fff;
+}
+
+.tag-ambitious {
+  background-color: #b64900;
+  color: #fff;
+}
+
+.tag-adaptable {
+  background-color: #2a8d50;
+  color: #fff;
+}
+
+.tag-efficent {
+  background-color: #815db1;
+  color: #fff;
+}
+
+.tag-empathetic {
+  background-color: #62a722;
+  color: #fff;
+}
+
+.tag-innovative {
+  background-color: #2298a7;
+  color: #fff;
+}
+
+.tag-detail-oriented {
+  background-color: #bd578f;
+  color: #fff;
+}
+
+.tag-research-oriented {
+  background-color: #6d80c2;
+  color: #fff;
+}
+
+.tag-self-disciplined {
+  background-color: #cfbb00;
+  color: #fff;
+}
+
+.tag-leadership {
+  background-color: #3500c5;
+  color: #fff;
+}
+
+.tag-independent {
+  background-color: #5e3758;
+  color: #fff;
+}
+
+.tag-problem-solving {
+  background-color: #30b98c;
+  color: #fff;
+}
+
+.tag-efficient {
+  background-color: #7c632c;
+  color: #fff;
+}
+
 footer {
   background-color: #333;
   color: #fff;

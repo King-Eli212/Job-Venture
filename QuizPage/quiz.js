@@ -143,14 +143,11 @@ document.addEventListener("DOMContentLoaded", function () {
       (trait) => `<div class="trait"><h4>${trait}</h4></div>`
     );
     resultsContainer.innerHTML = traitsOutput.join("");
-    location.href = "../index.html" + queryString;
+    location.href = "../home.html" + queryString;
   }
 
   buildQuiz();
   submitButton.addEventListener("click", function (event) {
     showResults();
-  });
-  backhomeButton.addEventListener("click", function (event) {
-    traits;
   });
 });

@@ -24,7 +24,60 @@ const jobTraits = [
     job: "Graphic Designer",
     traits: ["Creative", "Innovative", "Curious"],
   },
+  {
+    job: "Data Analyst",
+    traits: ["Analytical", "Detail-oriented", "Problem solver"],
+  },
+  {
+    job: "UX Designer",
+    traits: ["Creative", "Empathetic", "Collaborative"],
+  },
+  {
+    job: "Web Developer",
+    traits: ["Analytical", "Creative", "Detail-oriented"],
+  },
+  {
+    job: "Copywriter",
+    traits: ["Creative", "Adaptable", "Detail-oriented"],
+  },
+  {
+    job: "Human Resources Manager",
+    traits: ["Communicative", "Organized", "Empathetic"],
+  },
+  {
+    job: "Financial Analyst",
+    traits: ["Analytical", "Detail-oriented", "Problem solver"],
+  },
+  {
+    job: "Content Writer",
+    traits: ["Creative", "Communicative", "Research-oriented"],
+  },
+  {
+    job: "Technical Writer",
+    traits: ["Detail-oriented", "Clear communicator", "Organized"],
+  },
+  {
+    job: "Animator",
+    traits: ["Creative", "Innovative", "Collaborative"],
+  },
+  {
+    job: "Interior Designer",
+    traits: ["Creative", "Innovative", "Problem-solving"],
+  },
+  {
+    job: "Fine Artist",
+    traits: ["Creative", "Independent", "Self-disciplined"],
+  },
+  {
+    job: "Video Editor",
+    traits: ["Creative", "Detail-oriented", "Organized"],
+  },
+  {
+    job: "Art Director",
+    traits: ["Creative", "Leadership", "Communicative"],
+  },
 ];
+
 
 // Define a function that takes a list of selected traits and returns a sorted list of jobs
 function sortJobsByTraits(selectedTraits) {
