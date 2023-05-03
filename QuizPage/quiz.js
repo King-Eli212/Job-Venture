@@ -1,4 +1,3 @@
-
 const myQuestions = [
   {
     question: "What kind of working environment do you prefer?",
@@ -69,34 +68,34 @@ const myQuestions = [
 
 // Create an object to store the total count for each trait
 const traitCounts = {
-  "Ambitious": 0,
+  Ambitious: 0,
   "Team player": 0,
   "Self-motivated": 0,
-  "Analytical": 0,
-  "Creative": 0,
-  "Practical": 0,
-  "Resilient": 0,
-  "Collaborative": 0,
-  "Innovative": 0,
-  "Altruistic": 0,
-  "Curious": 0,
-  "Organized": 0,
-  "Adaptable": 0,
-  "Efficient": 0
+  Analytical: 0,
+  Creative: 0,
+  Practical: 0,
+  Resilient: 0,
+  Collaborative: 0,
+  Innovative: 0,
+  Altruistic: 0,
+  Curious: 0,
+  Organized: 0,
+  Adaptable: 0,
+  Efficient: 0,
 };
 
 document.addEventListener("DOMContentLoaded", function () {
   const quizContainer = document.getElementById("quiz-form");
   const resultsContainer = document.querySelector(".result-items");
-  const submitButton = document.querySelector('.quiz-submit');
-  const backhomeButton = document.querySelector('.back-to-home');
+  const submitButton = document.querySelector(".quiz-submit");
+  const backhomeButton = document.querySelector(".back-to-home");
 
   function buildQuiz() {
     const output = [];
-  
+
     myQuestions.forEach((currentQuestion, questionNumber) => {
       const answers = [];
-  
+
       for (const letter in currentQuestion.answers) {
         answers.push(`
           <div class="quiz-option">
@@ -111,7 +110,7 @@ document.addEventListener("DOMContentLoaded", function () {
           </div>
         `);
       }
-  
+
       output.push(`
         <div class="question-container">
           <h2 class="quiz-question">${currentQuestion.question}</h2>
@@ -120,30 +119,34 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
       `);
     });
-  
+
     quizContainer.innerHTML = output.join("");
   }
 
-function showResults() {
-  const answerContainers = quizContainer.querySelectorAll(".quiz-options");
-  // Loop through each question and update the selectedTraits array
-  const selectedTraits = [];
-  myQuestions.forEach((currentQuestion, questionNumber) => {
-    const answerContainer = answerContainers[questionNumber];
-    const selector = `input[name=question${questionNumber}]:checked`;
-    const userAnswer = (answerContainer.querySelector(selector) || {}).value;
-    selectedTraits.push(currentQuestion.traits[userAnswer]);
-  });
+  function showResults() {
+    const answerContainers = quizContainer.querySelectorAll(".quiz-options");
+    // Loop through each question and update the selectedTraits array
+    const selectedTraits = [];
+    myQuestions.forEach((currentQuestion, questionNumber) => {
+      const answerContainer = answerContainers[questionNumber];
+      const selector = `input[name=question${questionNumber}]:checked`;
+      const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+      selectedTraits.push(currentQuestion.traits[userAnswer]);
+    });
 
-  // Remove duplicates from selectedTraits array
-  const uniqueTraits = [...new Set(selectedTraits)];
+    // Remove duplicates from selectedTraits array
+    const uniqueTraits = [...new Set(selectedTraits)];
+    var queryString = `?traits=${JSON.stringify(uniqueTraits)}`;
+    console.log(queryString);
+    // Display selected traits in results container
+    const traitsOutput = uniqueTraits.map(
+      (trait) => `<div class="trait"><h4>${trait}</h4></div>`
+    );
+    resultsContainer.innerHTML = traitsOutput.join("");
+    location.href = "../index.html" + queryString;
+  }
 
-  // Display selected traits in results container
-  const traitsOutput = uniqueTraits.map(trait => `<div class="trait"><h4>${trait}</h4></div>`);
-  resultsContainer.innerHTML = traitsOutput.join("");
-}
-
-buildQuiz();
+  buildQuiz();
   submitButton.addEventListener("click", function (event) {
     showResults();
   });

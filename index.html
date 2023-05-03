@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>Job Search App</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body style="display: flex; flex-direction: column">
     <header>
       <div class="logo">
-        <img src="Assets/Jobventure.png" alt="Job Search App Logo">
+        <img src="Assets/Jobventure.png" alt="Job Search App Logo" />
       </div>
       <nav>
         <ul>
@@ -22,37 +22,19 @@
       <section class="hero">
         <h1>Let Your Passion Follow Your Heart</h1>
         <p>Start your job search now with our easy-to-use search bar.</p>
-        <form action="#" method="get">
-          <input type="text" name="job" placeholder="Enter a job title...">
+        <form action="" method="get">
+          <input type="text" name="job" placeholder="Enter a job title..." />
           <button type="submit">Search</button>
         </form>
       </section>
-      <section class="job-listings">
+      <section class="job-listings" id="job_list">
         <h2>Job Listings</h2>
-        <div class="job-listing">
-          <h3>Web Developer</h3>
-          <p>Develop and maintain websites for clients using HTML, CSS, and JavaScript.</p>
-          <ul class="tags">
-            <li class="tag-technical">Technical</li>
-            <li class="tag-creative">Creative</li>
-            <li class="tag-analytical">Analytical</li>
-          </ul>
-        </div>
-        <hr>
-        <div class="job-listing">
-          <h3>Marketing Coordinator</h3>
-          <p>Assist in the development and implementation of marketing campaigns and strategies.</p>
-          <ul class="tags">
-            <li class="tag-creative">Creative</li>
-            <li class="tag-communicative">Communicative</li>
-          </ul>
-        </div>
-        <hr>
         <!-- more job listings here -->
       </section>
+      <script src="src/job_indexing.js"></script>
     </main>
-    <footer>
-      <p>Copyright © 2023 Job Venture.</p>
-    </footer>
   </body>
+  <footer>
+    <p>Copyright © 2023 Job Venture.</p>
+  </footer>
 </html>
