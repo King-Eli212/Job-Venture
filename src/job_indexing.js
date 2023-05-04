@@ -26,7 +26,7 @@ const jobTraits = [
   },
   {
     job: "Data Analyst",
-    traits: ["Analytical", "Detail-oriented", "Problem solver"],
+    traits: ["Analytical", "Detail-oriented", "Problem-solving"],
   },
   {
     job: "UX Designer",
@@ -46,7 +46,7 @@ const jobTraits = [
   },
   {
     job: "Financial Analyst",
-    traits: ["Analytical", "Detail-oriented", "Problem solver"],
+    traits: ["Analytical", "Detail-oriented", "Problem-solving"],
   },
   {
     job: "Content Writer",
@@ -54,7 +54,7 @@ const jobTraits = [
   },
   {
     job: "Technical Writer",
-    traits: ["Detail-oriented", "Clear communicator", "Organized"],
+    traits: ["Detail-oriented", "Communicative", "Organized"],
   },
   {
     job: "Animator",
@@ -99,7 +99,6 @@ function sortJobsByTraits(selectedTraits) {
   const sortedJobs = Object.keys(jobCounts).sort(
     (a, b) => jobCounts[b] - jobCounts[a]
   );
-
   return sortedJobs;
 }
 

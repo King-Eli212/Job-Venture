@@ -86,9 +86,7 @@ const traitCounts = {
 
 document.addEventListener("DOMContentLoaded", function () {
   const quizContainer = document.getElementById("quiz-form");
-  const resultsContainer = document.querySelector(".result-items");
   const submitButton = document.querySelector(".quiz-submit");
-  const backhomeButton = document.querySelector(".back-to-home");
 
   function buildQuiz() {
     const output = [];
@@ -138,11 +136,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const uniqueTraits = [...new Set(selectedTraits)];
     var queryString = `?traits=${JSON.stringify(uniqueTraits)}`;
     console.log(queryString);
-    // Display selected traits in results container
     const traitsOutput = uniqueTraits.map(
       (trait) => `<div class="trait"><h4>${trait}</h4></div>`
     );
-    resultsContainer.innerHTML = traitsOutput.join("");
+
     location.href = "../home.html" + queryString;
   }
 
