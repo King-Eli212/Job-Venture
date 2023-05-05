@@ -64,6 +64,71 @@ const myQuestions = [
       c: "Efficient",
     },
   },
+  {
+    question: "How do you ensure attention to detail in your work?",
+    answers: {
+      a: "Create checklists and double-check your work",
+      b: "Use automated tools or software to check for errors",
+      c: "Take breaks and return to the work with fresh eyes",
+    },
+    traits: {
+      a: "Detail-oriented",
+      b: "Efficient",
+      c: "Patient",
+    },
+  },
+  {
+    question: "How do you handle a customer complaint?",
+    answers: {
+      a: "Listen actively to their concerns and offer a solution",
+      b: "Apologize for the inconvenience and explain the situation",
+      c: "Escalate the issue to a supervisor or manager if necessary",
+    },
+    traits: {
+      a: "Empathetic",
+      b: "Communicative",
+      c: "Problem-solving",
+    },
+  },
+  {
+    question: "How do you stay organized when managing multiple projects or tasks?",
+    answers: {
+      a: "Use a project management tool or app to track progress",
+      b: "Set clear deadlines and prioritize tasks based on importance",
+      c: "Delegate tasks to team members or colleagues",
+    },
+    traits: {
+      a: "Organized",
+      b: "Multitasking",
+      c: "Goal-oriented",
+    },
+  },
+  {
+    question: "How do you conduct research for a project or assignment?",
+    answers: {
+      a: "Use reputable sources and cross-check information",
+      b: "Interview experts or professionals in the field",
+      c: "Create a detailed plan or outline before beginning research",
+    },
+    traits: {
+      a: "Research-oriented",
+      b: "Detail-oriented",
+      c: "Problem-solving",
+    },
+  },
+  {
+    question: "How do you ensure effective communication with team members or colleagues?",
+    answers: {
+      a: "Regularly check in and provide updates on progress",
+      b: "Use clear and concise language when communicating",
+      c: "Encourage open and honest communication and feedback",
+    },
+    traits: {
+      a: "Communicative",
+      b: "Friendly",
+      c: "Adaptable",
+    },
+  }
 ];
 
 // Create an object to store the total count for each trait
@@ -82,6 +147,14 @@ const traitCounts = {
   Organized: 0,
   Adaptable: 0,
   Efficient: 0,
+  "Detail-oriented": 0,
+  "Research-oriented": 0,
+  Empathetic: 0,
+  Communicative: 0,
+  Friendly: 0,
+  "Problem-solving": 0,
+  "Goal-oriented": 0,
+  Patient: 0,
 };
 
 document.addEventListener("DOMContentLoaded", function () {

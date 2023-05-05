@@ -18,7 +18,8 @@ header {
 .logo img {
   max-height: 50px;
   max-width: 100%;
-  mix-blend-mode: multiply;
+  filter: invert(1);
+  mix-blend-mode:screen;
   size: 5px;
 }
 
@@ -82,6 +83,13 @@ form button[type="submit"] {
 
 .job-listings {
   margin-bottom: 40px;
+}
+
+.trait-listings {
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
 }
 
 .job-listing h3 {
@@ -207,6 +215,31 @@ form button[type="submit"] {
 
 .tag-efficient {
   background-color: #7c632c;
+  color: #fff;
+}
+
+.tag-friendly {
+  background-color: #741a29;
+  color: #fff;
+}
+
+.tag-patient {
+  background-color: #65b97a;
+  color: #fff;
+}
+
+.tag-multitasking {
+  background-color: #e26fa5;
+  color: #fff;
+}
+
+.tag-goal-oriented {
+  background-color: #ee8961;
+  color: #fff;
+}
+
+.tag-altruistic {
+  background-color: #47365c;
   color: #fff;
 }
 
